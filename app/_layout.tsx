@@ -22,8 +22,9 @@ export default function RootLayout() {
       <ContextProvider>
         <QueryClientProvider client={queryClient}>
           <Stack>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen name="query" options={{ headerShown: false }} />
+            <Stack.Screen name="productScreen" options={{ headerShown: false}} />
+            {/* <Stack.Screen name="index" options={{ headerShown: false }} />
+            <Stack.Screen name="query" options={{ headerShown: false }} /> */}
           </Stack>
         </QueryClientProvider>
       </ContextProvider>
