@@ -9,6 +9,7 @@ import {
   QueryClientProviderProps,
 } from "@tanstack/react-query";
 import { ContextProvider } from "@/contextProvider";
+import { ProductProvider } from "@/context/productContext";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -19,15 +20,15 @@ export default function RootLayout() {
 
   return (
     <>
-      <ContextProvider>
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <ProductProvider>
           <Stack>
-            <Stack.Screen name="productScreen" options={{ headerShown: false}} />
+            <Stack.Screen name="index" options={{ headerShown: false }} />
             {/* <Stack.Screen name="index" options={{ headerShown: false }} />
             <Stack.Screen name="query" options={{ headerShown: false }} /> */}
           </Stack>
-        </QueryClientProvider>
-      </ContextProvider>
+        </ProductProvider>
+      </QueryClientProvider>
     </>
   );
 }
